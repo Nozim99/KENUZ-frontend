@@ -43,9 +43,6 @@ export async function generateMetadata({params}: LayoutProps): Promise<Metadata>
             description: description || "",
             images: episode_data?.series?.image?.url ? [episode_data.series.image.url] : '',
         },
-        alternates: {
-            canonical: PUBLIC_URL
-        }
     }
 }
 
