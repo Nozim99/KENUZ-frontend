@@ -14,7 +14,7 @@ export async function GET() {
         return new NextResponse(sitemap, {
             headers: {
                 "Content-Type": "application/xml",
-                "Cache-Control": "public, max-age=3600, must-revalidate",
+                "Cache-Control": "no-store, max-age=0, must-revalidate",
             },
         });
     } catch (error) {
