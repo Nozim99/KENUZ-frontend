@@ -27,8 +27,8 @@ export const metadata: Metadata = {
         images: [
             {
                 url: PUBLIC_URL + "/kenuz.png",
-                width: 444,
-                height: 427,
+                width: 222,
+                height: 300,
                 alt: "KENUZ logo"
             }
         ],
