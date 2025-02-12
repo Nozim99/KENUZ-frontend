@@ -26,13 +26,30 @@ export async function generateMetadata({params}: LayoutProps): Promise<Metadata 
             title: title,
             description: description,
             keywords: keywords,
+            alternates: {
+                canonical: PUBLIC_URL
+            },
             openGraph: {
                 title: title,
                 description: description,
-                images: movie_data.image?.url ? [movie_data.image?.url] : '',
+                url: PUBLIC_URL + '/movie/' + encodeURI(movie_id),
+                siteName: "KENUZ",
+                images: [
+                    {
+                        url: movie_data.image.url,
+                        width: 444,
+                        height: 427,
+                        alt: title + ' image'
+                    }
+                ],
+                type: "website"
             },
-            alternates: {
-                canonical: PUBLIC_URL
+            twitter: {
+                card: "summary_large_image",
+                title: title,
+                description: description,
+                images: [movie_data.image.url],
+                creator: "KENUZ"
             }
         }
     } catch (error) {
