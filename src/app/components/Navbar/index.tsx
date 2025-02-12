@@ -7,7 +7,7 @@ const Navbar = () => {
             <div className={"flex items-center gap-[12px] lg:gap-[20px]"}>
                 <MenuModal />
                 <Link href={'/'} className={"h-[34px] flex items-center justify-center font-semibold text-xl sm:text-2xl lg:text-3xl tracking-widest"}>
-                    KENA
+                    KENUZ
                 </Link>
             </div>
             <div className={"flex items-center"}>
