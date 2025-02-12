@@ -1,0 +1,26 @@
+.title {
+  @apply text-xl font-medium sm:font-semibold sm:mb-[3px] lg:text-2xl;
+}
+
+.mContainer {
+  @apply container mx-auto px-[10px]
+}
+
+.menu_page {
+  @apply grid grid-cols-3 gap-[8px] min-[300px]:w-[300px] mx-auto min-[420px]:w-[350px] min-[500px]:w-[450px] min-[500px]:grid-cols-4 sm:w-[550px] sm:gap-x-[10px] sm:gap-y-[20px] md:w-[650px] lg:w-[820px] lg:gap-x-[15px];
+}
+
+.mTitle {
+  @apply text-center text-xl font-semibold mb-[20px] min-[400px]:text-2xl sm:text-3xl lg:text-4xl;
+}
+
+.anime_ul {
+  li {
+    @apply flex justify-between w-full items-center border-b border-neutral-500 border-dashed gap-x-[30px] pt-[10px] pb-[4px];
+
+
+    span:first-child {
+      @apply font-semibold;
+    }
+  }
+}
