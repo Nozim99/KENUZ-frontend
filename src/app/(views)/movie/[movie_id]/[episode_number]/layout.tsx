@@ -1,6 +1,6 @@
 import {Metadata} from "next";
 import axios from "axios";
-import {BASE_URL, PUBLIC_URL} from "@/utils/constants";
+import {BASE_URL} from "@/utils/constants";
 import {IEpisode} from "@/types/episode";
 import {notFound} from "next/navigation";
 
