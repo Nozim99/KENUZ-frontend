@@ -4,15 +4,25 @@ import axios from "axios";
 import {BASE_URL} from "@/utils/constants";
 
 export async function GET() {
-    const res_data = await axios.get(BASE_URL + '/sitemap')
-    const links: string[] = res_data.data?.data || [];
+    try {
+        const res_data = await axios.get(BASE_URL + '/sitemap')
+        const links: string[] = res_data.data?.data || [];
 
 
-    const sitemap = generateSitemap(links)
+        const sitemap = generateSitemap(links)
 
-    return new NextResponse(sitemap, {
-        headers: {
-            "Content-Type": "application/xml",
-        },
-    });
+        return new NextResponse(sitemap, {
+            headers: {
+                "Content-Type": "application/xml",
+            },
+        });
+    } catch (error) {
+        console.error(error)
+        return new NextResponse("<error>Failed to fetch sitemap</error>", {
+            status: 500,
+            headers: {
+                "Content-Type": "application/xml",
+            },
+        });
+    }
 }
