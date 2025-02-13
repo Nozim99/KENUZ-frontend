@@ -1,6 +1,6 @@
 import {Metadata} from "next";
 import axios from "axios";
-import {BASE_URL} from "@/utils/constants";
+import {BASE_URL, PUBLIC_URL} from "@/utils/constants";
 import {IEpisode} from "@/types/episode";
 import {notFound} from "next/navigation";
 
@@ -40,9 +40,26 @@ export async function generateMetadata({params}: LayoutProps): Promise<Metadata>
         keywords,
         openGraph: {
             title: episode_title,
-            description: description || "",
-            images: episode_data?.series?.image?.url ? [episode_data.series.image.url] : '',
+            description: description,
+            url: PUBLIC_URL + '/movie/' + encodeURI(movie_id) + '/' + episode_number,
+            siteName: "KENUZ",
+            images: [
+                {
+                    url: episode_data.series?.image?.url,
+                    width: 222,
+                    height: 300,
+                    alt: episode_title + ' image'
+                }
+            ],
+            type: "website"
         },
+        twitter: {
+            card: "summary_large_image",
+            title: episode_title,
+            description: description,
+            images: [episode_data.series?.image?.url],
+            creator: "KENUZ"
+        }
     }
 }
 
