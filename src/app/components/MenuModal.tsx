@@ -43,8 +43,8 @@ const MenuModal = () => {
                 onClick={() => setIsOpen(false)}
             ></div>
             <div
-                className={`${isOpen ? "left-0" : "-left-full"} transition-all duration-300 ease-out fixed z-30 w-[190px] top-0 bottom-0 bg-white`}>
-                <div className={"flex items-center justify-between p-[10px] border-b"}>
+                className={`${isOpen ? "left-0" : "-left-full"} transition-all duration-300 ease-out fixed z-30 w-[190px] top-0 bottom-0 bg-black`}>
+                <div className={"flex items-center justify-between p-[10px] border-b border-white/30"}>
                     <span>Menu</span>
                     <button onClick={() => setIsOpen(false)}>
                         <IconClose/>
@@ -58,7 +58,7 @@ const MenuModal = () => {
                                 onClick={() => {
                                     setIsOpen(false)
                                 }}
-                                className={"pl-[10px] py-[10px] block"}
+                                className={"pl-[10px] py-[10px] block hover:bg-white/10 transition-all duration-300"}
                             >
                                 {item.title}
                             </Link>

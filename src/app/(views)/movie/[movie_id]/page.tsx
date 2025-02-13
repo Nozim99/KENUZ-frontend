@@ -5,6 +5,7 @@ import axios from "axios";
 import {BASE_URL} from "@/utils/constants";
 import {notFound} from "next/navigation";
 import Image from "next/image";
+import {capitalizeLetter} from "@/utils/capitalizeLetter";
 
 interface IProps {
     params: Promise<{ movie_id: string }>
@@ -28,6 +29,9 @@ const Page = async ({params}: IProps) => {
         notFound()
     }
 
+    const age_number = movie_data.age_limit || 6
+    const age_color = age_number > 17 ? "#dc2626" : age_number > 11 ? "#2563eb" : "#16a34b"
+
 
     return (
         <div className={"mContainer pb-[100px]"}>
@@ -37,13 +41,16 @@ const Page = async ({params}: IProps) => {
 
             <div
                 className={"flex flex-col gap-[20px] items-center sm:flex-row lg:w-[900px] lg:mx-auto lg:items-start"}>
-                <Image
-                    className={"w-full h-[350px] min-[420px]:w-[360px] sm:h-[400px] bg-black/30 rounded-lg border border-[#f29824] object-center object-cover"}
-                    src={movie_data.image.url}
-                    width={360}
-                    height={400}
-                    alt={movie_data.title}
-                />
+                <div className={"relative"}>
+                    <div className="absolute inset-0 animate-pulse bg-yellow-900/30"></div>
+                    <Image
+                        className={"relative w-full h-[350px] min-[420px]:w-[360px] sm:h-[400px] bg-black/30 rounded-lg border border-[#f29824] object-center object-cover"}
+                        src={movie_data.image.url}
+                        width={360}
+                        height={400}
+                        alt={movie_data.title}
+                    />
+                </div>
 
                 <div className={"w-full min-[420px]:w-[400px] sm:w-full sm:flex-1 lg:text-lg"}>
                     <h2 className={"text-xl mb-[14px]"}>Ma&apos;lumotlar</h2>
@@ -73,14 +80,16 @@ const Page = async ({params}: IProps) => {
                             !!movie_data.genre?.length &&
                             <li>
                                 <span>Janr</span>
-                                <span className={""}>{movie_data.genre.join(', ')}</span>
+                                <span
+                                    className={""}>{movie_data.genre.map(item => capitalizeLetter(item)).join(', ')}</span>
                             </li>
                         }
                         {
                             typeof movie_data.age_limit === 'number' && movie_data.age_limit >= 0 &&
                             <li>
                                 <span>Yosh chegarasi</span>
-                                <span>{movie_data.age_limit || 6}+</span>
+                                <span style={{borderColor: age_color}}
+                                      className={"border-[2px] px-[5px] rounded"}>{movie_data.age_limit || 6}+</span>
                             </li>
                         }
                     </ul>

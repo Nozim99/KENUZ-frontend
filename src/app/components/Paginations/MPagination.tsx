@@ -20,7 +20,7 @@ export const MPagination = ({total_page, current_page, category}: IProps) => {
                         <Link
                             href={`/movies/${category}/${item === "..." ? current_page : item}`}
                             key={index}
-                            className={`${item === current_page ? "border-blue-900 bg-blue-100" : "border-black"} border rounded py-[2px] px-[10px] hover:bg-yellow-100 transition-colors`}
+                            className={`${item === current_page ? "border-blue-900 " : "border-white/10"} border rounded py-[2px] px-[10px] hover:bg-neutral-500/10 transition-colors`}
                         >
                             {item}
                         </Link>

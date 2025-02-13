@@ -7,7 +7,7 @@
 }
 
 .menu_page {
-  @apply grid grid-cols-3 gap-[8px] min-[300px]:w-[300px] mx-auto min-[420px]:w-[350px] min-[500px]:w-[450px] min-[500px]:grid-cols-4 sm:w-[550px] sm:gap-x-[10px] sm:gap-y-[20px] md:w-[650px] lg:w-[820px] lg:gap-x-[15px];
+  @apply grid grid-cols-3 gap-[8px] min-[300px]:w-[300px] mx-auto min-[420px]:w-[350px] min-[500px]:w-[450px] min-[500px]:grid-cols-4 sm:w-[550px] sm:gap-x-[10px] gap-y-[18px] sm:gap-y-[30px] md:w-[650px] lg:w-[830px] lg:gap-x-[25px];
 }
 
 .mTitle {
@@ -21,6 +21,32 @@
 
     span:first-child {
       @apply font-semibold;
+    }
+  }
+}
+
+.card {
+  &:hover {
+    box-shadow: 0 0 10px 5px rgba(234, 179, 128, 0.1);
+
+    h3 {
+      color: white;
+    }
+
+    img {
+      scale: 1.1;
+    }
+  }
+}
+
+.card_simple {
+  &:hover {
+    h3 {
+      color: white;
+    }
+
+    img {
+      scale: 1.1;
     }
   }
 }

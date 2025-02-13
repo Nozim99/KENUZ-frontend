@@ -31,14 +31,14 @@ export const GSelect = ({amount, link, classes}: IProps) => {
                         onChange={navigateHandler}
                         key={s_index}
                         value={''}
-                        className={"px-[10px] py-[6px] rounded border-[2px] border-[#F29824] text-black shadow sm:shadow-lg lg:text-lg lg:px-[22px] lg:py-[10px]"}
+                        className={"px-[10px] py-[6px] rounded border-[1px] border-yellow-500/60 bg-transparent shadow sm:shadow-lg lg:text-lg lg:px-[22px] lg:py-[10px]"}
                     >
-                        <option value="">
+                        <option value="" className={"bg-[#131119]"}>
                             {s_item.title}
                         </option>
                         {
                             s_item.options.map((o_item, o_index) => (
-                                <option key={o_index} value={o_item.value}>
+                                <option key={o_index} value={o_item.value} className={"bg-[#131119]"}>
                                     {o_item.label}
                                 </option>
                             ))

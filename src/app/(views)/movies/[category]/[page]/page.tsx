@@ -40,7 +40,7 @@ const Page = async ({params}: IProps) => {
                                 : 'Filmlar'
                     }
                 </h1>
-                <div className={"menu_page"}>
+                <div className={"menu_page mb-[30px] lg:mb-[50px]"}>
                     {
                         movie_data.movies.map((movie) => (
                             <Card

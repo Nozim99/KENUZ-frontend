@@ -5,6 +5,7 @@ import {BASE_URL} from "@/utils/constants";
 import {notFound} from "next/navigation";
 import {IEpisode} from "@/types/episode";
 import Image from "next/image";
+import {capitalizeLetter} from "@/utils/capitalizeLetter";
 
 interface IProps {
     params: Promise<{
@@ -35,12 +36,14 @@ const Page = async ({params}: IProps) => {
     const country = episode_data.series.country;
     const language = episode_data.series.language;
     const year = episode_data.series.year;
-    const genre = episode_data.series.genre;
-    const age_limit = episode_data.series.age_limit;
+    const genre = episode_data.series.genre?.map(item => capitalizeLetter(item));
+    const age_limit = episode_data.series.age_limit || 6;
     const video_url = episode_data.episode.video_url;
     const description = episode_data.episode.description
         ? episode_data.episode.description + '\n' + episode_data.series.description
         : episode_data.series.description
+
+    const age_color = age_limit > 17 ? "#dc2626" : age_limit > 11 ? "#2563eb" : "#16a34b"
 
 
     return (
@@ -51,13 +54,16 @@ const Page = async ({params}: IProps) => {
 
             <div
                 className={"flex flex-col gap-[20px] items-center sm:flex-row lg:w-[900px] lg:mx-auto lg:items-start"}>
-                <Image
-                    className={"w-full h-[350px] min-[420px]:w-[360px] sm:h-[400px] bg-black/30 rounded-lg border border-[#f29824] object-center object-cover"}
-                    src={episode_data.series.image.url}
-                    width={360}
-                    height={420}
-                    alt={episode_data.series.title}
-                />
+                <div className="relative">
+                    <div className="absolute inset-0 animate-pulse bg-yellow-900/30"></div>
+                    <Image
+                        className={"w-full relative h-[350px] min-[420px]:w-[360px] sm:h-[400px] bg-black/30 rounded-lg border border-[#f29824] object-center object-cover"}
+                        src={episode_data.series.image.url}
+                        width={360}
+                        height={420}
+                        alt={episode_data.series.title}
+                    />
+                </div>
 
                 <div className={"w-full min-[420px]:w-[400px] sm:w-full sm:flex-1 lg:text-lg"}>
                     <h2 className={"text-xl mb-[14px]"}>Ma&apos;lumotlar</h2>
@@ -76,14 +82,14 @@ const Page = async ({params}: IProps) => {
                         {
                             !!language &&
                             <li>
-                                <span>Til</span>
+                                <span>Tili</span>
                                 <span>{language}</span>
                             </li>
                         }
                         {
                             !!year &&
                             <li>
-                                <span>Yil</span>
+                                <span>Yili</span>
                                 <span>{year}</span>
                             </li>
                         }
@@ -91,14 +97,15 @@ const Page = async ({params}: IProps) => {
                             !!genre?.length &&
                             <li>
                                 <span>Janr</span>
-                                <span className={""}>{genre.join(', ')}</span>
+                                <span className={"text-end"}>{genre.join(', ')}</span>
                             </li>
                         }
                         {
                             typeof age_limit === 'number' && age_limit >= 0 &&
                             <li>
                                 <span>Yosh chegarasi</span>
-                                <span>{age_limit || 6}+</span>
+                                <span style={{borderColor: age_color}}
+                                      className={"border-[2px] px-[5px] rounded"}>{age_limit || 6}+</span>
                             </li>
                         }
                     </ul>
