@@ -1,6 +1,6 @@
 'use client'
 
-import {Swiper, SwiperSlide} from "swiper/react";
+import {Swiper, SwiperRef, SwiperSlide} from "swiper/react";
 import 'swiper/css';
 import {SwiperCard} from "@/components/MySwiper/SwiperCard";
 import {IconArrow} from "@/components/Icons/IconsMain";
@@ -18,7 +18,7 @@ interface IProps {
 
 
 export const MySwiper = ({title, data}: IProps) => {
-    const swiperRef = useRef<any>(null);
+    const swiperRef = useRef<SwiperRef | null>(null);
 
     const handlePrev = () => {
         if (swiperRef.current) {

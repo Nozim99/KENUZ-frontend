@@ -95,7 +95,7 @@ const Page = async ({params}: IProps) => {
                         {
                             !!movie_data.views &&
                             <li>
-                                <span>Ko'rildi</span>
+                                <span>Ko&apos;rildi</span>
                                 <span className={"text-end"}>{movie_data.views.toLocaleString('ru')}</span>
                             </li>
                         }

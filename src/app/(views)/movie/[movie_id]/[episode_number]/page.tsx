@@ -112,7 +112,7 @@ const Page = async ({params}: IProps) => {
                         {
                             !!views &&
                             <li>
-                                <span>Ko'rildi</span>
+                                <span>Ko&apos;rildi</span>
                                 <span className={"text-end"}>{views}</span>
                             </li>
                         }
