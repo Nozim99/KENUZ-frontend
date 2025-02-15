@@ -26,9 +26,9 @@ interface ISwiperData {
 
 export default async function HomePage() {
     try {
-        const anime_data = await axios.get(BASE_URL + '/movie' + `?category=anime`);
-        const film_data = await axios.get(BASE_URL + '/movie' + `?category=film`);
-        const cartoon_data = await axios.get(BASE_URL + '/movie' + `?category=cartoon`);
+        const anime_data = await axios.get(BASE_URL + '/movie' + `?category=anime`, {headers: {"Cache-Control": "no-cache"}});
+        const film_data = await axios.get(BASE_URL + '/movie' + `?category=film`, {headers: {"Cache-Control": "no-cache"}});
+        const cartoon_data = await axios.get(BASE_URL + '/movie' + `?category=cartoon`, {headers: {"Cache-Control": "no-cache"}});
 
         const movies: {
             anime: IResData;
