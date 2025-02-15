@@ -39,6 +39,7 @@ const Page = async ({params}: IProps) => {
     const genre = episode_data.series.genre?.map(item => capitalizeLetter(item));
     const age_limit = episode_data.series.age_limit || 6;
     const video_url = episode_data.episode.video_url;
+    const views = episode_data.episode.views;
     const description = episode_data.episode.description
         ? episode_data.episode.description + '\n' + episode_data.series.description
         : episode_data.series.description
@@ -47,7 +48,7 @@ const Page = async ({params}: IProps) => {
 
 
     return (
-        <div className={"mContainer pb-[100px]"}>
+        <div className={"mContainer"}>
             <h1 className={"text-center text-xl font-medium mb-[10px] sm:text-2xl sm:font-semibold sm:mb-[20px] md:text-3xl lg:mb-[30px]"}>
                 {episode_title}
             </h1>
@@ -106,6 +107,13 @@ const Page = async ({params}: IProps) => {
                                 <span>Yosh chegarasi</span>
                                 <span style={{borderColor: age_color}}
                                       className={"border-[2px] px-[5px] rounded"}>{age_limit || 6}+</span>
+                            </li>
+                        }
+                        {
+                            !!views &&
+                            <li>
+                                <span>Ko'rildi</span>
+                                <span className={"text-end"}>{views}</span>
                             </li>
                         }
                     </ul>

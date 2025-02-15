@@ -55,7 +55,7 @@ export default async function LocaleLayout({
         <body>
         <Navbar/>
         {children}
-        <footer className={"h-[100px]"}>
+        <footer className={"h-[30px] sm:h-[50px] lg:h-[80px]"}>
 
         </footer>
         </body>

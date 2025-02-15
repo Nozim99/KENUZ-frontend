@@ -12,6 +12,7 @@ export interface IMovieData {
     year?: number;
     genre?: string[];
     age_limit?: number;
+    views?: number;
     createdAt: Date;
     updateAt: Date;
     image: {

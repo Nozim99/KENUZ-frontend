@@ -8,6 +8,7 @@ export interface IEpisode {
         description?: string;
         duration?: number;
         keywords?: string[];
+        views?: number;
         createdAt: Date,
         updatedAt: Date,
         __v: number;

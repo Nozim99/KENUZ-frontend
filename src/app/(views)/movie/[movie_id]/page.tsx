@@ -34,7 +34,7 @@ const Page = async ({params}: IProps) => {
 
 
     return (
-        <div className={"mContainer pb-[100px]"}>
+        <div className={"mContainer"}>
             <h1 className={"text-center text-xl font-medium mb-[10px] sm:text-2xl sm:font-semibold sm:mb-[20px] md:text-3xl lg:mb-[30px]"}>
                 {movie_data.title}
             </h1>
@@ -90,6 +90,13 @@ const Page = async ({params}: IProps) => {
                                 <span>Yosh chegarasi</span>
                                 <span style={{borderColor: age_color}}
                                       className={"border-[2px] px-[5px] rounded"}>{movie_data.age_limit || 6}+</span>
+                            </li>
+                        }
+                        {
+                            !!movie_data.views &&
+                            <li>
+                                <span>Ko'rildi</span>
+                                <span className={"text-end"}>{movie_data.views.toLocaleString('ru')}</span>
                             </li>
                         }
                     </ul>

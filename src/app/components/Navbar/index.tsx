@@ -24,7 +24,7 @@ const nav_list = [
 
 const Navbar = () => {
     return (
-        <div className={"shadow-sm shadow-white/20 py-[10px] sm:py-[14px] lg:py-[30px] lg:mb-[35px]"}>
+        <div className={"shadow-sm shadow-white/20 py-[10px] sm:py-[14px] lg:py-[30px] mb-[20px] sm:mb-[25px] lg:mb-[35px]"}>
             <div
                 className={"mContainer flex items-center justify-between"}>
                 <div className={"flex items-center gap-[12px] lg:gap-[20px]"}>
