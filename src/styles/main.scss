@@ -3,7 +3,7 @@
 }
 
 .mContainer {
-  @apply container mx-auto px-[10px]
+  @apply min-[400px]:w-[370px] sm:w-[500px] lg:w-[800px] mx-auto px-[10px] min-[400px]:px-0;
 }
 
 .menu_page {

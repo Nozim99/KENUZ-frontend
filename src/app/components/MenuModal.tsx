@@ -22,10 +22,6 @@ const nav_list = [
         title: "Multfilmlar",
         path: "/movies/cartoon/1",
     },
-    // {
-    //     title: "Qo'shiqlar",
-    //     path: "/musics",
-    // },
 ]
 
 
@@ -33,7 +29,7 @@ const MenuModal = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className={"flex items-center"}>
+        <div className={"flex items-center lg:hidden"}>
             <button onClick={() => setIsOpen(true)}>
                 <IconMenu/>
             </button>
