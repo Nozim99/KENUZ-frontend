@@ -5,7 +5,7 @@ import {BASE_URL} from "@/utils/constants";
 
 export async function GET() {
     try {
-        const res_data = await axios.get(BASE_URL + '/sitemap')
+        const res_data = await axios.get(BASE_URL + '/sitemap', {headers: {"Cache-Control": "no-store"}})
         const links: string[] = res_data.data?.data || [];
 
 
