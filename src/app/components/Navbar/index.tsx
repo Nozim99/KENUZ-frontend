@@ -1,5 +1,6 @@
 import MenuModal from "@/app/components/MenuModal";
 import Link from "next/link";
+import SearchInput from "@/app/components/SearchInput";
 
 
 const nav_list = [
@@ -24,7 +25,8 @@ const nav_list = [
 
 const Navbar = () => {
     return (
-        <div className={"shadow-sm shadow-white/20 py-[10px] sm:py-[14px] lg:py-[30px] mb-[20px] sm:mb-[25px] lg:mb-[35px]"}>
+        <div
+            className={"shadow-sm shadow-white/20 py-[10px] sm:py-[14px] lg:py-[30px] mb-[20px] sm:mb-[25px] lg:mb-[35px] relative"}>
             <div
                 className={"mContainer flex items-center justify-between"}>
                 <div className={"flex items-center gap-[12px] lg:gap-[20px]"}>
@@ -40,6 +42,12 @@ const Navbar = () => {
                             <Link href={item.path} key={index}>{item.title}</Link>
                         ))
                     }
+                    <div className={"hidden lg:block"}>
+                        <SearchInput/>
+                    </div>
+                </div>
+                <div className={"block lg:hidden"}>
+                    <SearchInput/>
                 </div>
             </div>
         </div>
