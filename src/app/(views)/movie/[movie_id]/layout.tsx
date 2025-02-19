@@ -15,7 +15,7 @@ export async function generateMetadata({params}: LayoutProps): Promise<Metadata 
     try {
         const {movie_id} = await params;
 
-        const res_data = await axios.get(BASE_URL + '/movie/by_title/' + movie_id);
+        const res_data = await axios.get(BASE_URL + '/movie/by_title/' + movie_id + '?inc_views=true');
         const movie_data: IMovieData = res_data.data.movie;
         const title = (movie_data.title || 'Animelar').slice(0, 60);
         const description = (movie_data.description || '').slice(0, 160);

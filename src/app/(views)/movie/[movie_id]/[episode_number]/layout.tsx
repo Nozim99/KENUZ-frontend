@@ -19,7 +19,7 @@ export async function generateMetadata({params}: LayoutProps): Promise<Metadata>
     let episode_data: IEpisode;
 
     try {
-        const res_data = await axios.get(`${BASE_URL}/episode/${movie_id}/${episode_number}`);
+        const res_data = await axios.get(`${BASE_URL}/episode/${movie_id}/${episode_number}?inc_views=true}`);
 
         episode_data = res_data.data.data
     } catch (error) {
