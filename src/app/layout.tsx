@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         type: "website"
     },
     twitter: {
-        card: "summary_large_image",
+        card: "summary",
         title: "KENUZ - Anime, Film va Multfilm",
         description: "Anime, film va multfilm dunyosiga qadam qo'ying! Yangi chiqqan anime seriyalaridan tortib, mashhur filmlar va multfilmlargacha, barcha eng yaxshi va eng so'nggi kontentni toping.",
         images: [PUBLIC_URL + "/kenuz.png"],

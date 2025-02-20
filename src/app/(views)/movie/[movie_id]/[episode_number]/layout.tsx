@@ -29,7 +29,7 @@ export async function generateMetadata({params}: LayoutProps): Promise<Metadata>
 
     const keywords = [...(episode_data.episode.keywords || []), ...(episode_data.series.keywords || [])].slice(0, 10).join(', ');
     const episode_title = (episode_data.episode.title || `${episode_data.series.title} ${episode_number}-qism` || 'Animelar').slice(0, 60) + " 🎬 Tomosha qiling";
-    const description = (episode_data.episode.title || `${episode_data.series.title} ${episode_number}-qism` || 'Animelar') + " videoni tomosha qiling 🎬 " + (episode_data.episode.description
+    const description = (episode_data.episode.title || `${episode_data.series.title} ${episode_number}-qism` || 'Animelar') + " tomosha qiling 🎬 " + (episode_data.episode.description
         ? episode_data.episode.description + '\n' + episode_data.series.description
         : episode_data.series.description).slice(0, 160)
 
