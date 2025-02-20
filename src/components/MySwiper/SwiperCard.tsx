@@ -12,7 +12,14 @@ export const SwiperCard = ({image, title, path}: { image: string; title: string,
                 <div className={"absolute inset-0 animate-pulse bg-yellow-900/30"}></div>
                 <Image
                     src={image}
-                    className={"block w-full h-[130px] object-center object-cover sm:h-[170px] lg:h-[300px] rounded-lg relative transition-all duration-300"}
+                    className={"absolute w-full h-full inset-0 blur-sm"}
+                    width={240}
+                    height={300}
+                    alt={title}
+                />
+                <Image
+                    src={image}
+                    className={"block w-full h-[130px] object-center object-contain sm:h-[170px] lg:h-[300px] rounded-lg relative transition-all duration-300"}
                     width={240}
                     height={300}
                     alt={title}

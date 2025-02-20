@@ -40,11 +40,18 @@ const Page = async ({params}: IProps) => {
             </h1>
 
             <div
-                className={"flex flex-col gap-[20px] items-center sm:flex-row lg:w-[900px] lg:mx-auto lg:items-start"}>
+                className={"flex flex-col gap-[20px] items-center sm:flex-row lg:w-[900px] lg:mx-auto sm:items-start"}>
                 <div className={"relative"}>
                     <div className="absolute inset-0 animate-pulse bg-yellow-900/30"></div>
                     <Image
-                        className={"relative w-full h-[350px] min-[420px]:w-[360px] sm:h-[400px] bg-black/30 rounded-lg border border-[#f29824] object-center object-cover"}
+                        className={"absolute w-full h-full inset-0  rounded-lg border border-[#f29824] object-center object-cover blur-sm"}
+                        src={movie_data.image.url}
+                        width={360}
+                        height={400}
+                        alt={movie_data.title}
+                    />
+                    <Image
+                        className={"relative w-full h-[350px] min-[420px]:w-[360px] sm:h-[400px]  rounded-lg border border-[#f29824] object-center object-contain"}
                         src={movie_data.image.url}
                         width={360}
                         height={400}
@@ -81,7 +88,7 @@ const Page = async ({params}: IProps) => {
                             <li>
                                 <span>Janr</span>
                                 <span
-                                    className={""}>{movie_data.genre.map(item => capitalizeLetter(item)).join(', ')}</span>
+                                    className={"text-end"}>{movie_data.genre.map(item => capitalizeLetter(item)).join(', ')}</span>
                             </li>
                         }
                         {

@@ -20,7 +20,14 @@ export const Card = ({image, path, title}: IProps) => {
                 <div className={"absolute inset-0 animate-pulse bg-yellow-900/30"}></div>
                 <Image
                     src={image}
-                    className={"block w-full relative h-[130px] mb-[5px] object-center object-cover sm:h-[180px] md:h-[200px] lg:h-[255px] rounded-lg transition-all duration-300"}
+                    className={"absolute w-full h-full inset-0 blur-sm"}
+                    alt={title + ' image'}
+                    width={200}
+                    height={250}
+                />
+                <Image
+                    src={image}
+                    className={"block w-full relative h-[130px] mb-[5px] object-center object-contain sm:h-[180px] md:h-[200px] lg:h-[255px] rounded-lg transition-all duration-300"}
                     alt={title + ' image'}
                     width={200}
                     height={250}
