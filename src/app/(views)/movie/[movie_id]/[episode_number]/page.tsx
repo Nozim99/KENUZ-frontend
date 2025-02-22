@@ -55,10 +55,10 @@ const Page = async ({params}: IProps) => {
 
             <div
                 className={"flex flex-col gap-[20px] items-center sm:flex-row lg:w-[900px] lg:mx-auto lg:items-start"}>
-                <div className="relative">
+                <div className="relative w-full min-[420px]:w-auto">
                     <div className="absolute inset-0 animate-pulse bg-yellow-900/30"></div>
                     <Image
-                        className={"absolute w-full h-full inset-0 rounded-lg object-center object-cover"}
+                        className={"absolute w-full h-full inset-0 rounded-lg object-center object-cover blur"}
                         src={episode_data.series.image.url}
                         width={360}
                         height={420}
