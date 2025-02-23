@@ -3,6 +3,8 @@ import {generateSitemap} from "@/utils/generate_sitemap";
 import axios from "axios";
 import {BASE_URL} from "@/utils/constants";
 
+
+export const dynamic = "force-dynamic";
 export async function GET() {
     try {
         const res_data = await axios.get(BASE_URL + '/sitemap', {headers: {"Cache-Control": "no-store"}})
