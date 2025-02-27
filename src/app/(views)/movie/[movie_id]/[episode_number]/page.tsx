@@ -59,14 +59,14 @@ const Page = async ({params}: IProps) => {
                     <div className="absolute inset-0 animate-pulse bg-yellow-900/30"></div>
                     <Image
                         className={"absolute w-full h-full inset-0 rounded-lg object-center object-cover blur"}
-                        src={episode_data.series.image.url}
+                        src={episode_data.series?.image.url}
                         width={360}
                         height={420}
                         alt={episode_data.series.title}
                     />
                     <Image
                         className={"w-full relative h-[350px] min-[420px]:w-[360px] sm:h-[400px]  rounded-lg border border-[#f29824] object-center object-contain"}
-                        src={episode_data.series.image.url}
+                        src={episode_data.series?.image.url}
                         width={360}
                         height={420}
                         alt={episode_data.series.title}

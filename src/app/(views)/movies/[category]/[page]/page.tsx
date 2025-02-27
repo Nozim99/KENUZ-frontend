@@ -45,7 +45,7 @@ const Page = async ({params}: IProps) => {
                         movie_data.movies.map((movie) => (
                             <Card
                                 key={movie._id}
-                                image={movie.image.url}
+                                image={movie.image?.url}
                                 path={`/movie/` + movie.title}
                                 title={movie.title}
                             />

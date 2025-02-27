@@ -42,17 +42,17 @@ export default async function HomePage() {
 
         const swiper_data: ISwiperData = {
             anime: movies.anime.movies.map(item => ({
-                image: item.image.url,
+                image: item.image?.url,
                 title: item.title,
                 path: `/movie/${item.title}`
             })),
             film: movies.film.movies.map(item => ({
-                image: item.image.url,
+                image: item.image?.url,
                 title: item.title,
                 path: `/movie/${item.title}`
             })),
             cartoon: movies.cartoon.movies.map(item => ({
-                image: item.image.url,
+                image: item.image?.url,
                 title: item.title,
                 path: `/movie/${item.title}`
             })),

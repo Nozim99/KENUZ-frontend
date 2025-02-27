@@ -45,14 +45,14 @@ const Page = async ({params}: IProps) => {
                     <div className="absolute inset-0 animate-pulse bg-yellow-900/30"></div>
                     <Image
                         className={"absolute w-full h-full inset-0  rounded-lg border border-[#f29824] object-center object-cover blur"}
-                        src={movie_data.image.url}
+                        src={movie_data.image?.url}
                         width={360}
                         height={400}
                         alt={movie_data.title}
                     />
                     <Image
                         className={"relative w-full h-[350px] min-[420px]:w-[360px] sm:h-[400px]  rounded-lg border border-[#f29824] object-center object-contain"}
-                        src={movie_data.image.url}
+                        src={movie_data.image?.url}
                         width={360}
                         height={400}
                         alt={movie_data.title}

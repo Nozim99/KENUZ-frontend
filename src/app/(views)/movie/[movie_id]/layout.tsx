@@ -36,7 +36,7 @@ export async function generateMetadata({params}: LayoutProps): Promise<Metadata 
                 siteName: "KENUZ",
                 images: [
                     {
-                        url: movie_data.image.url,
+                        url: movie_data.image?.url,
                         width: 444,
                         height: 427,
                         alt: title + ' image'
@@ -48,7 +48,7 @@ export async function generateMetadata({params}: LayoutProps): Promise<Metadata 
                 card: "summary",
                 title: title,
                 description: description,
-                images: [movie_data.image.url],
+                images: [movie_data.image?.url],
                 creator: "KENUZ"
             }
         }
