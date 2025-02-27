@@ -10,7 +10,7 @@ import {useRef} from "react";
 interface IProps {
     title: string;
     data: {
-        image: string;
+        image?: string;
         title: string;
         path: string;
     }[]

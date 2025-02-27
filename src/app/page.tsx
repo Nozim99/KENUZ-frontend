@@ -7,17 +7,17 @@ import {notFound} from "next/navigation";
 
 interface ISwiperData {
     anime: {
-        image: string;
+        image?: string;
         title: string;
         path: string;
     }[];
     film: {
-        image: string;
+        image?: string;
         title: string;
         path: string;
     }[];
     cartoon: {
-        image: string;
+        image?: string;
         title: string;
         path: string;
     }[];
@@ -26,9 +26,9 @@ interface ISwiperData {
 
 export default async function HomePage() {
     try {
-        const anime_data = await axios.get(BASE_URL + '/movie' + `?category=anime`, {headers: {"Cache-Control": "no-cache"}});
-        const film_data = await axios.get(BASE_URL + '/movie' + `?category=film`, {headers: {"Cache-Control": "no-cache"}});
-        const cartoon_data = await axios.get(BASE_URL + '/movie' + `?category=cartoon`, {headers: {"Cache-Control": "no-cache"}});
+        const anime_data = await axios.get(BASE_URL + '/movie' + `?category=anime`);
+        const film_data = await axios.get(BASE_URL + '/movie' + `?category=film`);
+        const cartoon_data = await axios.get(BASE_URL + '/movie' + `?category=cartoon`);
 
         const movies: {
             anime: IResData;

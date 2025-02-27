@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export const SwiperCard = ({image, title, path}: { image: string; title: string, path: string }) => {
+export const SwiperCard = ({image, title, path}: { image?: string; title: string, path: string }) => {
     return (
         <Link
             href={path}
