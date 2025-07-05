@@ -87,6 +87,21 @@ export default async function LocaleLayout({
             `,
           }}
         />
+        {/* Monetag Additional Zone (Zone: 9530789) */}
+        <Script
+          id="monetag-zone-9530789"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(d,z,s){
+                s.src='https://'+d+'/401/'+z;
+                try{
+                  (document.body||document.documentElement).appendChild(s)
+                }catch(e){}
+              })('groleegni.net',9530789,document.createElement('script'))
+            `,
+          }}
+        />
         <Navbar />
         {children}
         <footer className={"h-[30px] sm:h-[50px] lg:h-[80px]"}></footer>
