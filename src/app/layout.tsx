@@ -4,6 +4,7 @@ import "../styles/globals.scss"
 import "../styles/main.scss"
 import {Metadata} from "next";
 import {PUBLIC_URL} from "@/utils/constants";
+import Script from "next/script";
 
 
 const inter = Inter({
@@ -52,6 +53,14 @@ export default async function LocaleLayout({
 
     return (
         <html lang={'uz'} className={inter.variable}>
+        <head>
+            <Script 
+                src="https://fpyf8.com/88/tag.min.js" 
+                data-zone="168122" 
+                strategy="afterInteractive"
+                data-cfasync="false"
+            />
+        </head>
         <body>
         <Navbar/>
         {children}
