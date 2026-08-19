@@ -55,8 +55,8 @@ export default async function LocaleLayout({
         <html lang={'uz'} className={inter.variable}>
         <head>
             <Script 
-                src="https://fpyf8.com/88/tag.min.js" 
-                data-zone="168122" 
+                src="https://quge5.com/88/tag.min.js"
+                data-zone="271431"
                 strategy="afterInteractive"
                 data-cfasync="false"
             />
